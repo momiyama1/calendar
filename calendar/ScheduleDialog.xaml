@@ -1,0 +1,35 @@
+﻿<Window x:Class="CalendarApp.ScheduleDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="予定の入力" Height="140" Width="300" ResizeMode="CanResize">
+    <Grid>
+        <!-- 行の定義 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- TextBoxの行 -->
+            <RowDefinition Height="Auto" />
+            <!-- ボタンの行（保存、削除、キャンセル） -->
+        </Grid.RowDefinitions>
+        <!-- 列の定義 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- 左のボタン（保存） -->
+            <ColumnDefinition Width="*" />
+            <!-- 中央のボタン（削除） -->
+            <ColumnDefinition Width="*" />
+            <!-- 右のボタン（キャンセル） -->
+        </Grid.ColumnDefinitions>
+
+        <!-- TextBox（予定入力） -->
+        <TextBox Name="ScheduleTextBox" VerticalAlignment="Top" Margin="10" Height="50" Grid.Row="0" Grid.ColumnSpan="3" />
+
+        <!-- 保存ボタン -->
+        <Button Content="保存" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Grid.Row="1" Grid.Column="0" Click="SaveButton_Click"/>
+
+        <!-- 削除ボタン -->
+        <Button Content="削除" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Grid.Row="1" Grid.Column="1" Click="DeleteButton_Click"/>
+
+        <!-- キャンセルボタン -->
+        <Button Content="キャンセル" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Grid.Row="1" Grid.Column="2" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

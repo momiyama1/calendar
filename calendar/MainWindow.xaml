@@ -1,0 +1,44 @@
+﻿<Window x:Class="CalendarApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calendar App" Height="600" Width="800" MinHeight="500" MinWidth="600">
+
+    <!-- スタイルの定義 -->
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- 前月ボタン -->
+        <Button Grid.Row="0" Content="前月" HorizontalAlignment="Left" Width="150" Height="50" Click="PreviousMonth_Click"/>
+
+        <!-- 次月ボタン -->
+        <Button Grid.Row="0" Content="次月" HorizontalAlignment="Right" Width="150" Height="50" Click="NextMonth_Click"/>
+
+        <!-- 月表示部分 -->
+        <TextBlock Grid.Row="0" Name="MonthText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">
+            <!-- 月表示 -->
+        </TextBlock>
+
+        <!-- 日付部分 -->
+        <UniformGrid Grid.Row="1" Name="DayGrid" Columns="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Content="日"/>
+            <Button Content="月"/>
+            <Button Content="火"/>
+            <Button Content="水"/>
+            <Button Content="木"/>
+            <Button Content="金"/>
+            <Button Content="土"/>
+            <!-- 日付ボタンが動的に追加されます -->
+        </UniformGrid>
+    </Grid>
+</Window>
